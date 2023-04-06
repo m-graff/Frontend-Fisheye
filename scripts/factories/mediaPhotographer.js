@@ -34,7 +34,7 @@ class MediaFactory {
 
 	render() {
 		if (this.media.image) {
-			return `<img class="imgGalery" src="assets/photos/${this.media.photographerId}/${this.media.image}" alt="${this.media.title}" tabindex="0">`
+			return `<img class="imgGalery" src="assets/photos/${this.media.photographerId}/${this.media.image}" alt="${this.media.title}">`
 		} else {
 			return `<video controls class="imgGalery">
 				<source src="assets/photos/${this.media.photographerId}/${this.media.video}" type="video/mp4" >`
@@ -66,9 +66,8 @@ function photographerMediaFactory(media) {
 		BlocPhotographerGalery.classList.add("container");
 		const photographerArticle = document.createElement("article");
 		photographerArticle.classList.add("photographer-galery-item");
-		// Transformer la div en a (peut être)
-		const photographerMedia = document.createElement("div");
-		//photographerMedia = setAttribute('href',"#")
+		const photographerMedia = document.createElement("a");
+		photographerMedia.setAttribute('href',"#");
 
 		// ------------ ????????? ------------- 
 
@@ -78,7 +77,6 @@ function photographerMediaFactory(media) {
 		const photographerArticleTitle = document.createElement("h2");
 		photographerArticleTitle.classList.add("title-photo");
 		photographerArticleTitle.textContent = `${title}`;
-		photographerArticleTitle.setAttribute("tabindex", "0");
 		photographerArticleInfos.appendChild(photographerArticleTitle);
 
 		// Section ajoutant les likes sur les photos
@@ -94,7 +92,7 @@ function photographerMediaFactory(media) {
 
 
 		const mediaFactory = new MediaFactory(media);
-		photographerMedia.classList.add('photographer-galery-media'); // ------------ ????????? -------------  
+		photographerMedia.classList.add('photographer-galery-media');
 		photographerMedia.setAttribute('data-idx', idx);
 		photographerMedia.innerHTML = mediaFactory.render();
 

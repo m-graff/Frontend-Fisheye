@@ -8,6 +8,8 @@ function displayModal() {
 			modal.setAttribute("aria-hidden", "false");
 			main.setAttribute("aria-hidden", "true");
 		}
+		const prenom = document.querySelector('#prenom');
+		prenom.focus();
 }
 
 // Fermeture modal de contact 
