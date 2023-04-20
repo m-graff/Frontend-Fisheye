@@ -19,12 +19,11 @@ async function displayData(photographers) {
     });
 };
 
-// ------------ ????????? ------------- 
-
+// Fonction de compilation des fonctions de récupération et d'affichage des datas
 async function init() {
     // Récupère les datas des photographes
     const { photographers } = await getPhotographers();
     displayData(photographers);
-};
-    
+};  
+
 init();

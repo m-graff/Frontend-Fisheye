@@ -28,16 +28,23 @@ function photographerInfosContact(photographer) {
 
 /* Factory Media permettant de trier image et vidéo */
 class MediaFactory {
-	constructor(media) {
+	constructor(media, controls) {
 		this.media = media
+		this.controls = controls
 	}
 
 	render() {
 		if (this.media.image) {
 			return `<img class="imgGalery" src="assets/photos/${this.media.photographerId}/${this.media.image}" alt="${this.media.title}">`
-		} else {
-			return `<video controls class="imgGalery">
-				<source src="assets/photos/${this.media.photographerId}/${this.media.video}" type="video/mp4">`
+		} else { 
+			// Affichage de manière conditionnelle les controls de la video (non affichés en gallerie, affichés en Lightbox)
+			const video = document.createElement('video');
+			video.innerHTML = `<source src="assets/photos/${this.media.photographerId}/${this.media.video}" type="video/mp4">`
+			video.classList.add('imgGalery');
+			if (this.controls) {
+				video.setAttribute('controls', '');
+			} 
+			return video.outerHTML;
 		}
 	}
 
@@ -52,7 +59,7 @@ function photographerMediaFactory(media) {
 	// Création du DOM lightbox
 	function createLightboxDOM() {
 		const mediaItem = document.createElement('li');
-		const mediaFactory = new MediaFactory(media);
+		const mediaFactory = new MediaFactory(media, true);
 		const mediaTitle = document.createElement('h2');
 		mediaTitle.innerText = title;
 		mediaItem.innerHTML = mediaFactory.render();
@@ -91,7 +98,7 @@ function photographerMediaFactory(media) {
 		photographerArticleInfos.appendChild(likesElement);
 
 		// Appel de la media factory pour créer les vignettes 
-		const mediaFactory = new MediaFactory(media);
+		const mediaFactory = new MediaFactory(media, false);
 		photographerMedia.classList.add('photographer-galery-media');
 		photographerMedia.setAttribute('data-idx', idx);
 		photographerMedia.innerHTML = mediaFactory.render();

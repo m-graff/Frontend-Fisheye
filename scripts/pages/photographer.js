@@ -164,8 +164,7 @@ function setGalleryEvent(){
     const slideWidth = lightboxSlide.clientWidth;
 	const likesPrices = document.getElementById('likes-price');
 
-	// ------------ ????????? ------------- 
-
+	// Permet d'ouvrir la Lightbox sur la bonne photo en fonction du clic sur la galerie 
 	galleryMedias.forEach((galleryMedia) => {
 		galleryMedia.addEventListener('click', (event) => {
             lightboxIdx = parseInt(event.currentTarget.dataset.idx);
@@ -174,7 +173,7 @@ function setGalleryEvent(){
             lightboxContainer.style.opacity = 1;
             lightboxBg.style.visibility = 'visible';
 			likesPrices.style.visibility = "hidden";
-
+			document.querySelector('.lightbox .imgGalery').focus();
 		})
 	})
 }
@@ -192,8 +191,7 @@ function setContactFormEvent(){
 	})
 }
 
-// ------------ ????????? ------------- 
-
+// Fonction d'initialisation permettant de récupérer les informations du photographe, de les afficher, tout en gérant les événements 
 async function init() {
 	const { photographer } = await getPhotographer();
 	const { media } = await getMedia();
