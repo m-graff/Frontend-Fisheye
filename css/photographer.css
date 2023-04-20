@@ -230,7 +230,7 @@
     right: 30px;
     width: 42px;
     height: 42px;
-    background: url(/assets/icons/close.svg) center center / 100% 100%;
+    background: url(../assets/icons/close.svg) center center / 100% 100%;
     border: none;
     cursor: pointer;
 }

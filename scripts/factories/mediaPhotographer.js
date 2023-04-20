@@ -23,11 +23,7 @@ function photographerInfosHeader(photographer) {
 function photographerInfosContact(photographer) {
     const contactName = document.querySelector("#contact-name");
     const { name } = photographer;
-	//contactName.textContent = name
 	contactName.innerHTML = `Contactez-moi <br> ${name}`;
-
-	/* ------ VALIDATION DU REMPLACEMENT POUR REGLER LA QUESTION DE LARIA LABELYED BY ------------  */ 
-
 }
 
 /* Factory Media permettant de trier image et vidéo */
@@ -72,9 +68,8 @@ function photographerMediaFactory(media) {
 		photographerArticle.classList.add("photographer-galery-item");
 		const photographerMedia = document.createElement("a");
 		photographerMedia.setAttribute('href',"#");
-		photographerMedia.setAttribute("aria-controls", "modal"); // VALIDATION ???
-
-		// ------------ ????????? ------------- 
+		photographerMedia.setAttribute("aria-controls", "modal");
+		photographerMedia.setAttribute("aria-label", `${title}`);
 
 		// Section ajoutant les informations de la photo 
 		const photographerArticleInfos = document.createElement("div");
