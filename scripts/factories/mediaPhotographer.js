@@ -23,7 +23,11 @@ function photographerInfosHeader(photographer) {
 function photographerInfosContact(photographer) {
     const contactName = document.querySelector("#contact-name");
     const { name } = photographer;
-	contactName.textContent = name
+	//contactName.textContent = name
+	contactName.innerHTML = `Contactez-moi <br> ${name}`;
+
+	/* ------ VALIDATION DU REMPLACEMENT POUR REGLER LA QUESTION DE LARIA LABELYED BY ------------  */ 
+
 }
 
 /* Factory Media permettant de trier image et vidéo */
@@ -37,7 +41,7 @@ class MediaFactory {
 			return `<img class="imgGalery" src="assets/photos/${this.media.photographerId}/${this.media.image}" alt="${this.media.title}">`
 		} else {
 			return `<video controls class="imgGalery">
-				<source src="assets/photos/${this.media.photographerId}/${this.media.video}" type="video/mp4" >`
+				<source src="assets/photos/${this.media.photographerId}/${this.media.video}" type="video/mp4">`
 		}
 	}
 
@@ -54,9 +58,9 @@ function photographerMediaFactory(media) {
 		const mediaItem = document.createElement('li');
 		const mediaFactory = new MediaFactory(media);
 		const mediaTitle = document.createElement('h2');
-		mediaTitle.innerText = title
+		mediaTitle.innerText = title;
 		mediaItem.innerHTML = mediaFactory.render();
-		mediaItem.appendChild(mediaTitle)
+		mediaItem.appendChild(mediaTitle);
 		return mediaItem;
 	}
 
@@ -68,6 +72,7 @@ function photographerMediaFactory(media) {
 		photographerArticle.classList.add("photographer-galery-item");
 		const photographerMedia = document.createElement("a");
 		photographerMedia.setAttribute('href',"#");
+		photographerMedia.setAttribute("aria-controls", "modal"); // VALIDATION ???
 
 		// ------------ ????????? ------------- 
 
@@ -90,7 +95,7 @@ function photographerMediaFactory(media) {
 		likesElement.appendChild(likesHeart);
 		photographerArticleInfos.appendChild(likesElement);
 
-
+		// Appel de la media factory pour créer les vignettes 
 		const mediaFactory = new MediaFactory(media);
 		photographerMedia.classList.add('photographer-galery-media');
 		photographerMedia.setAttribute('data-idx', idx);
@@ -105,13 +110,12 @@ function photographerMediaFactory(media) {
 			likesCount.innerText = likes;
 			const totalLike = document.querySelector('.total-like');
 			totalLike.innerText = parseInt(totalLike.innerText) + 1;
-			likesElement.setAttribute('disabled', ''); // Ajouter un aria une fois le bouton désactiver pour indiquer à l'utilisateur qu'il ne peut que liker qu'une fois 
+			likesElement.setAttribute('disabled', ''); // Ajouter un aria disabled une fois l'action effectuée pour indiquer à l'utilisateur qu'il ne peut liker qu'une fois chaque cliché
 		})
 		return (photographerArticle);
 	}
 	return { CreateGaleryDom, createLightboxDOM };
 }
-
 
 /* Fonction de création du bloc likes & price total en base de page */
 function getLikesPrice (media, photographer) {

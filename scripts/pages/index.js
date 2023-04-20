@@ -8,8 +8,7 @@ async function getPhotographers() {
 	};
 }
 
-// ------------ ????????? ------------- 
-
+// Fonction d'affichage des Cards photographes
 async function displayData(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
 

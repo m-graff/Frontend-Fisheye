@@ -54,7 +54,6 @@ function displayDataLightbox(medias) {
 	})	
 }
 
-
 // Fonction de tri via le Select 
 function sortMedia(media, triValue) {
 
@@ -132,10 +131,8 @@ function setLightboxEvents(mediaLength){
 			lightboxModal.style.visibility = "hidden";
 		}, 500)
 		lightboxBg.style.visibility = "hidden";
-
-	// Réaffichage du bloc likes/prix suites à la fermeture de la Lightbox 
-	likesPrices.style.visibility = "visible";
-
+		// Réaffichage du bloc likes/prix suites à la fermeture de la Lightbox 
+		likesPrices.style.visibility = "visible";
 	}
 
 	// Calcul translation flèche de gauche Lightbox, précédente 

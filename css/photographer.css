@@ -245,6 +245,7 @@
 
 .lightbox-container i {
     font-size: 48px;
+    cursor: pointer;
 }
 
 .lightbox-prev {

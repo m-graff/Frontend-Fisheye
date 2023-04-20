@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/photographer.css">
     <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/photographer.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
@@ -12,7 +12,7 @@
 
     <header>
       <a href="index.html" class="logoHeader">
-        <img src="assets/images/logo.png" class="logo" alt="Fisheye Home Page" />
+        <img src="assets/images/logo.png" class="logo" alt="Fisheye Home Page">
       </a>
     </header>
 
@@ -25,7 +25,7 @@
    
       <!-- Menu select de tri des photos -->
       <div class="select-container">
-        <label for="select-tri">Trier par</label>
+        <label for="select">Trier par</label>
         <select name="tri" id="select">
           <option value="popularite" tabindex="0">Popularité</option>
           <option value="date" tabindex="0">Date</option>
@@ -62,11 +62,11 @@
 
     <!-- Formulaire de Contact -->
     <div id="contact-modal" role="dialog" aria-hidden="true" aria-label="Formulaire de contact pour joindre le photographe" tabindex="1">
-			<div class="modal" aria-labelledby="Contactez-moi">
+			<div class="modal" aria-labelledby="contact-name">
 				<header>
           <div>
-            <h2 id="contact-modal-title">Contactez-moi</h2>
-            <h2 id="contact-name"></h2>
+            <!--<h2 id="contact-modal-title">Contactez-moi</h2>-->
+            <h2 id="contact-name">Contactez-moi</h2>
           </div>
           <img src="assets/icons/close.svg" onclick="closeModal()" alt="Fermeture modale contact" aria-label="Bouton de fermeture de la fenêtre de contact">
         </header>
@@ -74,17 +74,17 @@
 				<form id="contact">
 					<div>
 						<label for="prenom">Prénom</label>
-						<input type="text" name="prenom" id="prenom" required/>
+						<input type="text" name="prenom" id="prenom" required>
             <span class="error-message">Merci de renseigner votre prénom</span>
 					</div>
           <div>
 						<label for="nom">Nom</label>
-						<input type="text" name="nom" id="nom" required/>
+						<input type="text" name="nom" id="nom" required>
             <span class="error-message">Merci de renseigner votre nom</span>
 					</div>
           <div>
 						<label for="prenom">Email</label>
-						<input type="email" name="email" id="email" required/>
+						<input type="email" name="email" id="email" required>
             <span class="error-message">Merci de renseigner une adresse mail valide</span>
 					</div>
           <div>
