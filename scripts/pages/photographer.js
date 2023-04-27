@@ -169,11 +169,25 @@ function setGalleryEvent(){
 		galleryMedia.addEventListener('click', (event) => {
             lightboxIdx = parseInt(event.currentTarget.dataset.idx);
 			lightbox.style.transform = `translateX(-${slideWidth * lightboxIdx}px)`;
-            lightboxContainer.style.visibility = 'visible';
+
+			lightboxContainer.style.visibility = "visible";
+            //lightboxContainer.style.display = 'block';
+
             lightboxContainer.style.opacity = 1;
-            lightboxBg.style.visibility = 'visible';
 			likesPrices.style.visibility = "hidden";
-			document.querySelector('.lightbox .imgGalery').focus();
+
+            lightboxBg.style.visibility = 'visible';
+			//lightboxBg.style.display = 'block';
+
+			/* Test focus sur le ul
+			const ul = document.getElementsByTagName('ul');
+			ul.focus();
+			*/ 
+			const myDiv = document.getElementById('myDiv');
+			myDiv.focus();
+			const myDiv2 = document.getElementById('myDiv2');
+			myDiv2.focus();
+			
 		})
 	})
 }
