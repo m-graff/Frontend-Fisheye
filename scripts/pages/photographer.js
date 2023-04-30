@@ -163,6 +163,7 @@ function setGalleryEvent(){
     const lightboxSlide = document.querySelector('.lightbox li');
     const slideWidth = lightboxSlide.clientWidth;
 	const likesPrices = document.getElementById('likes-price');
+	const closeButton = document.querySelector(".lightbox-close");
 
 	// Permet d'ouvrir la Lightbox sur la bonne photo en fonction du clic sur la galerie 
 	galleryMedias.forEach((galleryMedia) => {
@@ -171,22 +172,10 @@ function setGalleryEvent(){
 			lightbox.style.transform = `translateX(-${slideWidth * lightboxIdx}px)`;
 
 			lightboxContainer.style.visibility = "visible";
-            //lightboxContainer.style.display = 'block';
-
             lightboxContainer.style.opacity = 1;
 			likesPrices.style.visibility = "hidden";
-
             lightboxBg.style.visibility = 'visible';
-			//lightboxBg.style.display = 'block';
-
-			/* Test focus sur le ul
-			const ul = document.getElementsByTagName('ul');
-			ul.focus();
-			*/ 
-			const myDiv = document.getElementById('myDiv');
-			myDiv.focus();
-			const myDiv2 = document.getElementById('myDiv2');
-			myDiv2.focus();
+			closeButton.focus();
 			
 		})
 	})

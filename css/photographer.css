@@ -129,7 +129,7 @@
 }
 
 .btn-like-photo {
-    font-size: 24px;
+    font-size: 20px;
     color: #901C1C;
     border: none;
     background: none;
@@ -162,7 +162,7 @@
 
 .title-photo {
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 /* PAGE PHOTOGRAPHE : LIGHTBOX */
@@ -179,10 +179,7 @@
     background: rgb(255, 255, 255);
     transform: translate(-50%, -50%);
     overflow: hidden;
-
     visibility: hidden;
-    /* display: none;*/
-
     opacity: 0;
     transition: opacity .5s linear;
 }
@@ -194,9 +191,7 @@
     background: rgba(255, 255, 255, 1);
     left: 0;
     top: 0;
-
     visibility: hidden;
-    /*display: none;*/
 }
 
 .lightbox {
@@ -244,8 +239,9 @@
     position: absolute;
     width: 36px;
     height: 36px;
-   
     color: #901C1C;
+    background: none;
+    border: none;
 }
 
 .lightbox-container i {
@@ -436,3 +432,4 @@ form textarea {
     }
 
 }
+

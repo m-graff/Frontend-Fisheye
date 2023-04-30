@@ -3,7 +3,7 @@ function photographerFactory(data) {
 	const { name, portrait, city, country, tagline, price, id } = data;
 	const picture = `assets/photographers/${portrait}`;
     
-	// Création du DOM des Cards photographe --- AJOUTER PP POUR LA CONSTITUTION DE DOM 
+	// Création du DOM des Cards photographe 
 	function getUserCardDOM() {
 		const article = document.createElement( "article" );
 		const img = document.createElement( "img" );

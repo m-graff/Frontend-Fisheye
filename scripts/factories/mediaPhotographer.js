@@ -37,7 +37,7 @@ class MediaFactory {
 		if (this.media.image) {
 			return `<img class="imgGalery" src="assets/photos/${this.media.photographerId}/${this.media.image}" alt="${this.media.title}">`
 		} else { 
-			// Affichage de manière conditionnelle les controls de la video (non affichés en gallerie, affichés en Lightbox)
+			// Affichage de manière conditionnelle des controls de la video (non affichés en gallerie, affichés en Lightbox)
 			const video = document.createElement('video');
 			video.innerHTML = `<source src="assets/photos/${this.media.photographerId}/${this.media.video}" type="video/mp4">`
 			video.classList.add('imgGalery');
@@ -102,7 +102,7 @@ function photographerMediaFactory(media) {
 		photographerMedia.classList.add('photographer-galery-media');
 		photographerMedia.setAttribute('data-idx', idx);
 		photographerMedia.innerHTML = mediaFactory.render();
-
+		
 		photographerArticle.appendChild(photographerMedia);
 		photographerArticle.appendChild(photographerArticleInfos);
 
