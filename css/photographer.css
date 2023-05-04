@@ -259,6 +259,10 @@
     right: 30px;
 }
 
+button:focus-visible {
+    border: 1px solid black;
+}
+
 /* PAGE PHOTOGRAPHE : MODALE FORMULAIRE CONTACT */
 #contact-modal {
     display: none;
@@ -432,4 +436,5 @@ form textarea {
     }
 
 }
+
 

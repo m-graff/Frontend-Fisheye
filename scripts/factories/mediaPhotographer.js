@@ -43,7 +43,8 @@ class MediaFactory {
 			video.classList.add('imgGalery');
 			if (this.controls) {
 				video.setAttribute('controls', '');
-			} 
+				video.setAttribute('tabindex', 3)
+			}
 			return video.outerHTML;
 		}
 	}

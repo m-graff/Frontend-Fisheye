@@ -103,7 +103,8 @@ function setLightboxEvents(mediaLength){
 	const keyCodes = {
 		escape: "Escape",
 		previous: "ArrowLeft",
-		next: "ArrowRight"
+		next: "ArrowRight",
+		enter: "Enter"
 	};
 	window.addEventListener('keydown', (event) => {
 		if (event.code === keyCodes.escape) {
@@ -123,6 +124,20 @@ function setLightboxEvents(mediaLength){
     prevButton.addEventListener('click', previousSlide)
     // Déclenchement flèche de droite, suivante
     nextButton.addEventListener('click', nextSlide)
+
+	// Déclenchement flèche gauche clavier 
+	prevButton.addEventListener('keydown', (e) => {
+		if (e. code === keyCodes.enter) {
+			previousSlide();
+		}
+	})
+
+	// Déclenchement flèche droite clavier 
+	nextButton.addEventListener('keydown', (e) => {
+		if (e. code === keyCodes.enter) {
+			nextSlide();
+		}
+	})
 
 	// Fonction déterminant le comportement de la Lightbox suites à sa fermeture
 	function closeModal() {
@@ -176,7 +191,6 @@ function setGalleryEvent(){
 			likesPrices.style.visibility = "hidden";
             lightboxBg.style.visibility = 'visible';
 			closeButton.focus();
-			
 		})
 	})
 }
